@@ -14,10 +14,10 @@ Below can be seen the tables which has been split up and done with to get the ex
 ```
 CREATE TABLE Users(
 uname VARCHAR PRIMARY KEY,
-nickname VARCHAR,
-bio VARCHAR,
-following BIGINT,
-follwers BIGINT,
+nickname VARCHAR NOT NULL,
+bio VARCHAR NOT NULL,
+following BIGINT NOT NULL,
+follwers BIGINT NOT NULL,
 );
 ```
 
@@ -25,7 +25,7 @@ follwers BIGINT,
 ```
 CREATE TABLE Country(
 CountryID INTEGER PRIMARY KEY,
-Country VARCHAR
+Country VARCHAR NOT NULL
 );
 ```
 
@@ -35,8 +35,8 @@ CREATE TABLE Location(
 LocationID INTEGER PRIMARY KEY
 place VARCHAR NULLABLE,
 CountryID INTEGER REFERECES Country(CountryID),
-latitude DOUBLE PRECISION,
-longitude DOUBLE PRECISION,
+latitude DOUBLE PRECISION NOT NULL,
+longitude DOUBLE PRECISION NOT NULL,
 );
 ```
 
@@ -44,7 +44,7 @@ longitude DOUBLE PRECISION,
 ```
 CREATE TABLE Language(
 LangID INTEGER PRIMARY KEY,
-Language VARCHAR
+Language VARCHAR NOT NULL
 );
 ```
 
@@ -55,13 +55,32 @@ ID INTEGER PRIMARY KEY,
 url VARCHAR UNIQUE,
 uname VARCHAR REFERECES Users(uname),
 LangID INTEGER REFERECES Language(LangID)
-rts BIGINT,
-favs BIGINT,
+rts BIGINT NOT NULL,
+favs BIGINT NOT NULL,
 listed NULLABLE,
-date DATE,
-hour TIME,
-message VARCHAR,
+date DATE NOT NULL,
+hour TIME NOT NULL,
+message VARCHAR NOT NULL,
 picture VARCHAR NULLABLE,
 LocationID REFERECES Location(LocationID)
 );
 ```
+
+### Postgress sql
+- To run postgresssql
+```
+docker run -p 5432:5432 -d -v postgres-data:/var/lib/postgresql/data --name psql postgres:alpine
+```
+- To access it
+```
+docker exec -it psql bash
+```
+- Start sql terminal
+```
+psql -U postgres
+```
+
+- usefull postgress commands
+```
+\dt : List tables
+\d [name] : describes the structure of a table
