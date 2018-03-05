@@ -62,7 +62,7 @@ date DATE NOT NULL,
 hour TIME NOT NULL,
 message VARCHAR NOT NULL,
 picture VARCHAR,
-LocationID REFERENCES Location(LocationID)
+LocationID INTEGER REFERENCES Location(LocationID)
 );
 ```
 
