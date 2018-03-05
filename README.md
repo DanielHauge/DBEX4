@@ -66,6 +66,8 @@ LocationID INTEGER REFERENCES Location(LocationID)
 );
 ```
 
+[![https://gyazo.com/01bf21e1436ba19e4b1e194d66add591](https://i.gyazo.com/01bf21e1436ba19e4b1e194d66add591.png)](https://gyazo.com/01bf21e1436ba19e4b1e194d66add591)
+
 ### Postgress sql
 - To run postgresssql
 ```
