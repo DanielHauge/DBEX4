@@ -32,7 +32,7 @@ Country VARCHAR NOT NULL
 - Location table. This allows for a tweet to use a pre-existing location as reference, without having to redudantly put all the information in again.
 ```
 CREATE TABLE Location(
-LocationID INTEGER PRIMARY KEY
+LocationID INTEGER PRIMARY KEY,
 place VARCHAR,
 CountryID INTEGER REFERECES Country(CountryID),
 latitude DOUBLE PRECISION NOT NULL,
