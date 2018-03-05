@@ -45,6 +45,7 @@ longitude DOUBLE PRECISION,
 CREATE TABLE Language(
 LangID INTEGER PRIMARY KEY,
 Language VARCHAR
+);
 ```
 
 - Tweets table. The main table that reference other tables.
