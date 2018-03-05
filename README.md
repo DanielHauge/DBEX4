@@ -57,7 +57,7 @@ uname VARCHAR REFERECES Users(uname),
 LangID INTEGER REFERECES Language(LangID)
 rts BIGINT NOT NULL,
 favs BIGINT NOT NULL,
-listed,
+listed BIGINT,
 date DATE NOT NULL,
 hour TIME NOT NULL,
 message VARCHAR NOT NULL,
