@@ -34,7 +34,7 @@ Country VARCHAR NOT NULL
 CREATE TABLE Location(
 LocationID INTEGER PRIMARY KEY,
 place VARCHAR,
-CountryID INTEGER REFERECES Country(CountryID),
+CountryID INTEGER REFERENCES Country(CountryID),
 latitude DOUBLE PRECISION NOT NULL,
 longitude DOUBLE PRECISION NOT NULL
 );
@@ -53,8 +53,8 @@ Language VARCHAR NOT NULL
 CREATE TABLE Tweets(
 ID INTEGER PRIMARY KEY,
 url VARCHAR UNIQUE,
-uname VARCHAR REFERECES Users(uname),
-LangID INTEGER REFERECES Language(LangID)
+uname VARCHAR REFERENCES Users(uname),
+LangID INTEGER REFERENCES Language(LangID)
 rts BIGINT NOT NULL,
 favs BIGINT NOT NULL,
 listed BIGINT,
@@ -62,7 +62,7 @@ date DATE NOT NULL,
 hour TIME NOT NULL,
 message VARCHAR NOT NULL,
 picture VARCHAR,
-LocationID REFERECES Location(LocationID)
+LocationID REFERENCES Location(LocationID)
 );
 ```
 
