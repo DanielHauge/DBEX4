@@ -33,7 +33,7 @@ Country VARCHAR NOT NULL
 ```
 CREATE TABLE Location(
 LocationID INTEGER PRIMARY KEY
-place VARCHAR NULLABLE,
+place VARCHAR,
 CountryID INTEGER REFERECES Country(CountryID),
 latitude DOUBLE PRECISION NOT NULL,
 longitude DOUBLE PRECISION NOT NULL
@@ -57,11 +57,11 @@ uname VARCHAR REFERECES Users(uname),
 LangID INTEGER REFERECES Language(LangID)
 rts BIGINT NOT NULL,
 favs BIGINT NOT NULL,
-listed NULLABLE,
+listed,
 date DATE NOT NULL,
 hour TIME NOT NULL,
 message VARCHAR NOT NULL,
-picture VARCHAR NULLABLE,
+picture VARCHAR,
 LocationID REFERECES Location(LocationID)
 );
 ```
