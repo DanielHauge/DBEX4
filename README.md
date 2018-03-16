@@ -69,10 +69,6 @@ LocationID INTEGER REFERENCES Location(LocationID)
 [![https://gyazo.com/01bf21e1436ba19e4b1e194d66add591](https://i.gyazo.com/01bf21e1436ba19e4b1e194d66add591.png)](https://gyazo.com/01bf21e1436ba19e4b1e194d66add591)
 
 ### Postgres sql
-- Data been used
-```
-docker run -p 5432:5432 --name data jegp/soft2018-data
-```
 - To run postgresssql
 ```
 docker run -p 5432:5432 -d -v postgres-data:/var/lib/postgresql/data --name psql postgres:alpine
